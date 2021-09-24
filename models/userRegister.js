@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true
+
     },
     email: {
         type: String,
@@ -29,7 +30,14 @@ const userSchema = new mongoose.Schema({
     },
     image:{
         type: String,
+        default:"https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png"
         
+    },
+    userType :{
+        type : String,
+        enum : ['Admin', 'user', 'seller'],
+        default : 'user'
+
     },
 
     tokens:[
